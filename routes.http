@@ -3,11 +3,6 @@ GET http://localhost:3333/prompts
 
 ###
 
-# @name list-prompts
-GET http://localhost:3333/prompts
-
-###
-
 # @name upload
 POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -18,3 +13,13 @@ Content-Type: audio/mpeg
 
 < ./exemple.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name create-transcription
+POST http://localhost:3333/videos/57551254-af27-4d4c-965b-30d810701189/transcription
+Content-Type: application/json
+
+{
+  "prompt": "clean architecture, ddd"
+}
